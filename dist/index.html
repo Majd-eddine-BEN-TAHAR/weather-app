@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <!-- CORS problem -->
+    <!-- https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9 -->
+
+    <!-- LINK TO THE PLACES API -->
+    <!-- https://developer.mapquest.com/documentation/place-search-js/v1.0/#result-object -->
+
+    <!-- LINK TO THE WEATHER API -->
+    <!-- https://darksky.net/dev/docs -->
+
+    <div class="container">
+      <div class="header"></div>
+      <div class="icon-container">
+        <!-- <canvas id="icon-canvas" width="100px" height="100px"></canvas> -->
+        <img id="weather-icon" class="weather-icon" src="" alt="" />
+      </div>
+      <h3 class="summary">clear</h3>
+      <h1 class="place">tunis, tn</h1>
+      <div class="data-to-show">
+        <div class="box-model">
+          <p class="box-model__title">humidity</p>
+          <p class="box-model__value">
+            <span class="humidity">0 %</span>
+          </p>
+        </div>
+
+        <div class="box-model" id="measure">
+          <p class="box-model__title">temperature</p>
+          <p class="box-model__value">
+            <span class="temperature">0</span>
+            <span class="unit">F</span>
+          </p>
+        </div>
+
+        <div class="box-model">
+          <p class="box-model__title">pressure</p>
+          <p class="box-model__value">
+            <span class="pressure">Pa</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="inputDiv">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Enter you location..."
+        />
+      </div>
+    </div>
+
+    <a class="darsky-link" href="https://darksky.net/poweredby/"
+      >Powered by Dark Sky</a
+    >
+  </body>
+</html>
