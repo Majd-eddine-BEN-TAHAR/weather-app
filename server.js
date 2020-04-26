@@ -10,15 +10,15 @@ app.use(bodyParser.json());
 const cors = require("cors");
 app.use(cors());
 app.use(express.static("dist"));
-app.get("/", function (req, res) {
-  res.sendFile("dist/index.html");
-});
 const port = process.env.PORT || 8085;
 const server = app.listen(port, listening);
 
 function listening() {
   console.log(`localhost:${port}`);
 }
+app.get("/", function (req, res) {
+  res.sendFile("dist/index.html");
+});
 // get root
 app.post("/get", (req, res) => {
   const openWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${req.body.lat}&lon=${req.body.lng}&appid=${process.env.openweather_key}&units=imperial`;
