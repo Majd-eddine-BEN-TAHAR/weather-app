@@ -13,7 +13,7 @@ app.use(express.static("dist"));
 app.get("/", function (req, res) {
   res.sendFile("dist/index.html");
 });
-const port = 8085;
+const port = process.env.PORT || 8085;
 const server = app.listen(port, listening);
 
 function listening() {
